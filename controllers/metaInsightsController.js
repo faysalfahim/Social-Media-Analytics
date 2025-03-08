@@ -1,5 +1,5 @@
 
-const { getInsights } = require('../services/facebookServices');
+const { getMetaInsights } = require('../services/facebookServices');
 const { convertToCSV, writeToCSV } = require('../utils/csvConverter');
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +10,7 @@ const fetchAndSaveMetaInsights = async (req, res) => {
 
     for (const metric of metrics) {
         console.log(`Fetching data for metric: ${metric}`);
-        const insightsData = await getInsights(metric);
+        const insightsData = await getMetaInsights(metric);
         
         if (insightsData.error) {
           console.error(`Error fetching data for metric ${metric}:`, insightsData.error);
@@ -19,7 +19,7 @@ const fetchAndSaveMetaInsights = async (req, res) => {
   
         console.log(`Data fetched for metric ${metric}:`, insightsData);
   
-        const csvData = convertToCSV(insightsData);
+        const csvData = convertToCSV(insightsData, 'meta');
         console.log(`CSV data for metric ${metric}:`, csvData);
   
         const filePath = path.join(__dirname, `../CSVs/${metric}.csv`);
