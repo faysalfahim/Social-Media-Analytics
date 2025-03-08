@@ -4,7 +4,7 @@ const { convertToCSV, writeToCSV } = require('../utils/csvConverter');
 const fs = require('fs');
 const path = require('path');
 
-const fetchAndSaveInsights = async (req, res) => {
+const fetchAndSaveMetaInsights = async (req, res) => {
   try {
     const metrics = ['page_fans_country', 'page_impressions', 'page_posts_impressions','page_total_actions','page_follows','page_fans_city','page_video_views','page_views_total']; // Add your metrics here
 
@@ -36,4 +36,4 @@ const fetchAndSaveInsights = async (req, res) => {
     }
   };
   
-  module.exports = { fetchAndSaveInsights };
+  module.exports = { fetchAndSaveMetaInsights };

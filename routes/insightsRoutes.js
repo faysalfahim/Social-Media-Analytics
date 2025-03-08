@@ -1,8 +1,8 @@
 const express = require('express');
-const { fetchAndSaveInsights } = require('../controllers/insightsController');
+const { fetchAndSaveMetaInsights } = require('../controllers/metaInsightsController');
 
 const router = express.Router();
 
-router.get('/', fetchAndSaveInsights);
+router.get('/', fetchAndSaveMetaInsights);
 
 module.exports = router;
