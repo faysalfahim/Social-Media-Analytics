@@ -2,7 +2,7 @@
 
 ## APIs for Meta Insights Analysis
 
-- fetchAndSaveMetaInsights is the only route working to extract the insights for various metrics
+- /api/insights/meta is the route working to extract the insights for various metrics
   - Page_impressions related all
   - Page_impressions_unique
   - Page_fans_country
@@ -14,9 +14,8 @@
   - Page_video_views
   - Page_views_total
   - Page Video Posts
- 
+
 ## APIs for Youtube Insights Analysis
 
- - fetchAndSaveYouTubeInsights is the only route working to extract the insights for various metrics
-
-## Only single platform's insights can be fetched now, routing needs to be configured to fetch both platforms.
+- /api/insights/youtube is the route working to extract the insights for various metrics
+  - Primarily likes, subs and views are extracted.
