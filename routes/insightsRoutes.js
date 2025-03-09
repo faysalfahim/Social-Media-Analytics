@@ -5,7 +5,7 @@ const { fetchAndSaveYouTubeInsights } = require('../controllers/youtubeInsightsC
 
 const router = express.Router();
 
-router.get('/', fetchAndSaveMetaInsights);
-//router.get('/', fetchAndSaveYouTubeInsights);
+router.get('/meta', fetchAndSaveMetaInsights);
+router.get('/youtube', fetchAndSaveYouTubeInsights);
 
 module.exports = router;
