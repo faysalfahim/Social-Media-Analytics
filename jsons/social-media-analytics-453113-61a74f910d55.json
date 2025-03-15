@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "social-media-analytics-453113",
+  "private_key_id": "61a74f910d559c28004fb457e81d1c39df621f71",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCs0IZaMIliDkhF\n91rA+rAOXdud8cMqZ55z8r4LZQ2weWPlsw2gvGWSQRXBl2/ZALfBCgwAY1TSCTri\nKvvpnLGzYZ+8xQh9NXgUToopBWYCj91q2yxzdknH3mHH8lxEDQB90Tm7QzZLvKa2\nxZ0lTN00O06TOXBhSiSmFhwcwW8HTH5QvtLAE+So2TPC69zWiDZvSsP8m1y4bACL\n/sdefSrf4JmjHHwhOhVyqb0szamFKn8YaaspcDWfMso6F/WEG7IofV3A5CKJaB5/\ns0cPkwcu17NGnSnmjc1ONSatEmNonsAWV3XnE8EzYg8uoUep3NrhZHNbRx2WF/Bj\n71Xr65zZAgMBAAECggEAS+TaFBK7yu3lzKBYYWbW2cBbei5aHS3bdyVUU/HBxM5S\n0mZDpmMGomfl85qbmqwHhwXwBl2ZOxKlovzonAxeOB64BbFsTHymaxig8Wn3BkoD\nHfH6QAzjUxz1SVfFMHebTyYLGhPm7PUBLER2ApMSlGU1WU/A7GEg3jXYi8JhjczP\nDijUbZZiDCTjVUg7+ZUpwNzsx9+E4UQyAKrkT4WuH0PrFHoVGx4a3LNt2yekCEdc\n82Ici8Zntapp6ch+Ba3IwkZX7XmGpQzDNndW1YRcKGBPBe3q2kCO6XHXiP06Ud9R\nP7FyfEugBNn0KUSZvp1SHvpZYdhv011TO4riIzZapwKBgQDn54++MWDv3tQ2wXex\n3+BX7/p1kllK4uDBKetI0rq+/bZ/MXW7NbqO/uvTmOYEmGFsQiuGPHf+hvlyTgxd\n8cry1NE+m6vg7icjLKVvQb+qn9HPTW3bzpYUyK/9KMZ+aWY+HfwAS6qMayKuj35Q\nOg1/bUGxr1fC6GwBVt9uqOhkKwKBgQC+xTntLocgeYhluYpSbjPRebMaEVPCP0X9\n6B5mOE91GCQYq5/9Dxny80CVH2z1lhvE5CvQJveftTZvKE6bEe61CQcm09bIoVs6\nNQ1Xm31GCjarXtZX2pvp54TFX7ucx+G5900vuXb/uL+8PjJJknHq10QxTTWFr4HL\ndLyQVFttCwKBgQCQokFqU42rzQP56ovmakSXU9qXfWEnbXzTvHs7/gHuoHoztftB\neW8TRDZ8z/2VnBwW0uYmYIxOOIxXGApqhSUYclbWf2yhaqcKLww26YDKv8axTg9Y\nae38pHXupIG30bCsyTKkVIzX6vHEgUY8bxiAAvpYAY3wx9iktTPA5qOZ5QKBgEyr\ncUtsjqwzi+juN7RHTBYdJikM26/OxC92cXk9mlmCGUe8+jC3OAOXVdZY6e6NpJ1t\n4lnmv1B1gOoNtgHGpDwn47LsIn9BsitjlPgnqqJSioQ3OkfWuSC5hnfYsMsi3gpi\nZKgQjs3Zj111VbqR26y5VVPHJwKSdcSyJvKOpKvfAoGAeK7VKCEm2efAcK4vBFwq\nlrUjzin4O4jBFcb9aen9RQ41IJMJqvbL59WGqtNlyE9z4bSi1pV8YkzunTccFlmD\nSpnXZAUce0pSBeByQXfLAoCxWFm5yegNrq/6VlkQgNxIACS8LrXbkJSm9H/P/BsQ\nfSdl4bvtwFZuAje665jEAV4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "social-media-analytics@social-media-analytics-453113.iam.gserviceaccount.com",
+  "client_id": "116067843923996473959",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/social-media-analytics%40social-media-analytics-453113.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
