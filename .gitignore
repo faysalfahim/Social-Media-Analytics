@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#secret
+.jsons\social-media-analytics-453113-61a74f910d55.json
