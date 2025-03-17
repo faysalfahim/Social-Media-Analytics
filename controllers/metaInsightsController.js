@@ -51,12 +51,13 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
 
     for (const post of postsToProcess) {
       const postId = post.id;
+      const postTitle = post.message || post.story || 'No Title'; // Use message or story as the title
       console.log(`Fetching insights for post ${postId} ...`);
 
        // Determine if the post is a video by checking the attachments
       const isVideo = post.attachments?.data?.some(attachment => attachment.type === 'video_inline');
       //const metrics = postMetrics;
-      const postMetricsData = { postId };
+      const postMetricsData = { postId, postTitle };
 
       for (const metric of postMetrics) {
         const insightsData = await getPostInsights(postId, metric);

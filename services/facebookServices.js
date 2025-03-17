@@ -3,7 +3,7 @@ const axios = require('axios');
 const getPagePosts = async () => {
   const accessToken = process.env.FB_PAGE_ACCESS_TOKEN;
   const pageId = process.env.FB_PAGE_ID;
-  const postsEndpoint = `https://graph.facebook.com/v22.0/${pageId}/posts?fields=id,attachments&access_token=${accessToken}`;
+  const postsEndpoint = `https://graph.facebook.com/v22.0/${pageId}/posts?fields=id,message,story,attachments&access_token=${accessToken}`;
 
   try {
     const response = await axios.get(postsEndpoint);
