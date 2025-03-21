@@ -7,7 +7,6 @@ const getPagePosts = async () => {
 
   try {
     const response = await axios.get(postsEndpoint);
-    //console.log('Posts fetched:', response.data.data);
     return response.data.data;
   } catch (error) {
     console.error('Error fetching page posts:', error.response?.data || error.message);

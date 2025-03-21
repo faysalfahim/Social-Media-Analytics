@@ -56,7 +56,6 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
 
        // Determine if the post is a video by checking the attachments
       const isVideo = post.attachments?.data?.some(attachment => attachment.type === 'video_inline');
-      //const metrics = postMetrics;
       const postMetricsData = { postId, postTitle };
 
       for (const metric of postMetrics) {
@@ -68,7 +67,7 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
         }
 
         console.log(`Data fetched for post ${postId} and metric ${metric}:`, JSON.stringify(insightsData, null, 2));
-        // Extra code to process video insights
+  
         if(Array.isArray(insightsData) && insightsData.length > 0) {
           const metricValue = insightsData[0]?.values[0]?.value || 0;
           postMetricsData[metric] = metricValue;
@@ -76,13 +75,9 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
           console.warn(`No data found for post ${postId} and metric ${metric}`);
           postMetricsData[metric] = 0;
         }
-        // Assume insightsData is an array with one object containing the value
-        /* const metricValue = insightsData[0]?.values[0]?.value || 0;
-        postMetricsData[metric] = metricValue; */
       }
       consolidatedPostData.push(postMetricsData);
 
-      // Extra code to process video insights
       if (isVideo) {
         const videoMetricsData = { postId };
 
@@ -163,34 +158,9 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
- // Working for individual post insights
-          /* try {
-            const csvData = convertToCSV(insightsData, 'meta');
-            console.log(`CSV data for post ${postId} and metric ${metric}:`, csvData);
+ 
 
-            const filePath = path.join(__dirname, `../CSVs/${postId}_${metric}.csv`);
-            console.log(`Writing data to file: ${filePath}`);
 
-            writeToCSV(filePath, csvData);
-          } catch (error) {
-            console.error(`Error writing data for post ${postId} and metric ${metric}:`, error.message);
-          }
-        }
-      }
-      if (!fullRefresh) {
-        const updatedProcessedPosts = [...processedPosts, ...postsToProcess.map(post => post.id)];
-        fs.writeFileSync(processedPostsPath, JSON.stringify(updatedProcessedPosts, null, 2));
-      }
-
-      updateLastRefreshTime();
-
-      res.status(200).send('Meta insights data fetched and written to CSV.');
-    } catch (error) {
-      console.error('Error in fetchAndSaveMetaPostInsights:', error);
-      res.status(500).send(error.message);
-    }
-  }; */
-  
 const fetchAndSaveMetaPageInsights = async (req, res) => {
   try {
     const metrics = [
