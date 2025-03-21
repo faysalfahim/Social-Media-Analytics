@@ -1,54 +1,3 @@
-/* const { google } = require('googleapis');
-
-const getYouTubeInsights = async (metric, channelId) => {
-  const apiKey = process.env.YOUTUBE_API_KEY;
-
-  try {
-    const youtube = google.youtube({
-      version: 'v3',
-      auth: apiKey
-    });
-
-    let response;
-    switch (metric) {
-      case 'statistics':
-        response = await youtube.channels.list({
-          part: 'statistics',
-          id: channelId
-        });
-        return response.data.items[0].statistics;
-
-      case 'mostWatchedVideo':
-        response = await youtube.search.list({
-          part: 'snippet',
-          channelId: channelId,
-          order: 'viewCount',
-          maxResults: 1
-        });
-        return response.data.items[0];
-
-      case 'audienceDemographics':
-        // This requires OAuth2 authentication and the YouTube Analytics API
-        // Placeholder for audience demographics logic
-        return await getAudienceDemographics(channelId);
-
-      default:
-        throw new Error('Unsupported metric');
-    }
-  } catch (error) {
-    console.error('Error fetching YouTube insights:', error.message);
-    return { error: error.message || "Server error" };
-  }
-};
-
-// Placeholder function for audience demographics
-const getAudienceDemographics = async (channelId) => {
-  // Implement OAuth2 authentication and YouTube Analytics API call here
-  return {}; // Return mock data or implement actual logic
-};
-
-module.exports = { getYouTubeInsights }; */
-
 //Video by video insights
 
 const { google } = require('googleapis');
@@ -146,7 +95,7 @@ const getAudienceDemographics = async (channelId) => {
   return []; // Return an array of objects for consistency
 };
 
-
+// Future implementation for audience demographics
 /* const getAudienceDemographics = async (channelId) => {
   const oauth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,
