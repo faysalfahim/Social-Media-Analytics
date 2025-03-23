@@ -2,6 +2,17 @@
 
 const { google } = require('googleapis');
 
+const oauth2Client = new google.auth.OAuth2(
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET,
+  process.env.GOOGLE_REDIRECT_URI
+);
+
+// Set the refresh token
+oauth2Client.setCredentials({
+  refresh_token: process.env.REFRESH_TOKEN
+});
+
 const getYouTubeInsights = async (metric, channelId) => {
   const apiKey = process.env.YOUTUBE_API_KEY;
 
@@ -89,23 +100,8 @@ const getYouTubeInsights = async (metric, channelId) => {
   }
 };
 
-// Placeholder function for audience demographics
+// Function to get audience demographics
 const getAudienceDemographics = async (channelId) => {
-  // Implement OAuth2 authentication and YouTube Analytics API call here
-  return []; // Return an array of objects for consistency
-};
-
-// Future implementation for audience demographics
-/* const getAudienceDemographics = async (channelId) => {
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    process.env.REDIRECT_URI
-  );
-
-  // Set the refresh token
-  oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
-
   try {
     const youtubeAnalytics = google.youtubeAnalytics({
       version: 'v2',
@@ -114,23 +110,23 @@ const getAudienceDemographics = async (channelId) => {
 
     const response = await youtubeAnalytics.reports.query({
       ids: `channel==${channelId}`,
-      startDate: '2023-01-01', // Adjust the date range as needed
-      endDate: '2023-12-31',
-      metrics: 'viewerPercentage',
+      startDate: '2022-01-01', // Adjust the date range as needed
+      endDate: '2025-02-20',
+      metrics: 'views',
       dimensions: 'country',
-      sort: '-viewerPercentage'
+      sort: 'views'
     });
 
     return response.data.rows.map(row => ({
       country: row[0],
-      viewerPercentage: row[1]
+      views: row[1]
     }));
   } catch (error) {
     console.error('Error fetching audience demographics:', error.message);
     return { error: error.message || "Server error" };
   }
-}; */
+};
 
 
-module.exports = { getYouTubeInsights };
+module.exports = { getYouTubeInsights, getAudienceDemographics };
 
