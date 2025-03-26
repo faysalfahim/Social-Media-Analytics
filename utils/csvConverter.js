@@ -1,4 +1,3 @@
-//trying for youtube insights
 const { Parser } = require('json2csv');
 const fs = require('fs');
 

@@ -14,6 +14,7 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
       'post_reactions_haha_total',
       'post_reactions_sorry_total',
       'post_reactions_anger_total',
+      ''
     ];
 
     const videoMetrics = [
@@ -52,11 +53,12 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
     for (const post of postsToProcess) {
       const postId = post.id;
       const postTitle = post.message || post.story || 'No Title'; // Use message or story as the title
+      const postCreationDate = post.created_time || 'No Date';
       console.log(`Fetching insights for post ${postId} ...`);
 
        // Determine if the post is a video by checking the attachments
       const isVideo = post.attachments?.data?.some(attachment => attachment.type === 'video_inline');
-      const postMetricsData = { postId, postTitle };
+      const postMetricsData = { postId, postTitle, postCreationDate };
 
       for (const metric of postMetrics) {
         const insightsData = await getPostInsights(postId, metric);
@@ -78,6 +80,7 @@ const fetchAndSaveMetaPostInsights = async (req, res) => {
       }
       consolidatedPostData.push(postMetricsData);
 
+      //console.log("Type :",isVideo);
       if (isVideo) {
         const videoMetricsData = { postId };
 
@@ -223,7 +226,7 @@ const fetchAndSaveMetaPageInsights = async (req, res) => {
 const shouldPerformFullRefresh = () => {
   const lastRefreshTime = getLastRefreshTime();
   const currentTime = new Date().getTime();
-  const refreshInterval =  24 * 60 * 60 * 1000; // 24 hours
+  const refreshInterval =  24* 60 * 60 * 1000; // 24 hours
 
   return currentTime - lastRefreshTime > refreshInterval;
 };
