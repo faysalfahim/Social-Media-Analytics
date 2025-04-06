@@ -1,7 +1,8 @@
 const express = require('express');
-const { fetchAndSaveMetaPageInsights, fetchAndSavePageInsightsOverTime } = require('../controllers/metaPageInsightsController');
+const { fetchAndSaveMetaPageInsights } = require('../controllers/metaPageInsightsController');
 const { fetchAndSaveMetaPostInsights } = require('../controllers/metaPostInsightsController');
 const { fetchAndSaveYouTubeInsights } = require('../controllers/youtubeInsightsController');
+const { fetchAndSavePageInsightsOverTime } = require('../controllers/metaPageInsightsOvertimeController');
 
 
 const router = express.Router();
